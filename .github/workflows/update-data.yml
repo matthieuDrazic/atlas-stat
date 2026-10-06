@@ -17,15 +17,15 @@ jobs:
         with:
           python-version: '3.12'
       - name: Récupérer et convertir les données (aucune écriture avant validation)
-        run: python3 scripts/update_data.py
+        run: python3 scripts/refresh_public_data.py
       - name: Valider le dépôt
         run: python3 scripts/validate.py
       - name: Enregistrer un instantané valide
         run: |
-          git add data/production/worldbank.json
+          git add data/production data/source-status.json
           if ! git diff --cached --quiet; then
             git config user.name 'github-actions[bot]'
             git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-            git commit -m 'data: refresh validated World Bank snapshot'
+            git commit -m 'data: refresh validated public database snapshots'
             git push
           fi

@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "themes": [
     {
       "id": "1",
@@ -80,7 +80,8 @@
       "representativeness": "Aucune : démonstration uniquement.",
       "revisions": "Aucune série officielle.",
       "methodologyNote": "DONNÉES DE DÉMONSTRATION : chiffres artificiels sans valeur statistique.",
-      "dataType": "observation"
+      "dataType": "observation",
+      "question": "population"
     },
     {
       "id": "immigres-demo",
@@ -104,7 +105,8 @@
       "representativeness": "Aucune : démonstration uniquement.",
       "revisions": "Aucune série officielle.",
       "methodologyNote": "DONNÉES DE DÉMONSTRATION : chiffres artificiels sans valeur statistique.",
-      "dataType": "observation"
+      "dataType": "observation",
+      "question": "immigration"
     },
     {
       "id": "chomage-demo",
@@ -126,7 +128,8 @@
       "representativeness": "Aucune : démonstration uniquement.",
       "revisions": "Aucune série officielle.",
       "methodologyNote": "DONNÉES DE DÉMONSTRATION : chiffres artificiels sans valeur statistique.",
-      "dataType": "observation"
+      "dataType": "observation",
+      "question": "chomage"
     },
     {
       "id": "revenu-demo",
@@ -149,7 +152,8 @@
       "representativeness": "Aucune : démonstration uniquement.",
       "revisions": "Aucune série officielle.",
       "methodologyNote": "DONNÉES DE DÉMONSTRATION : chiffres artificiels sans valeur statistique.",
-      "dataType": "observation"
+      "dataType": "observation",
+      "question": "revenus"
     },
     {
       "id": "population-wb",
@@ -171,7 +175,10 @@
       "collection": "Compilation par la Banque mondiale de sources nationales et internationales.",
       "representativeness": "Dépend de la source nationale de chaque observation.",
       "dataType": "estimate",
-      "methodologyNote": "Compilation WDI. Le statut « estimation » est une qualification prudente du connecteur ; la méthode précise dépend de l’indicateur. Consulter les métadonnées originales."
+      "methodologyNote": "Compilation WDI. Le statut « estimation » est une qualification prudente du connecteur ; la méthode précise dépend de l’indicateur. Consulter les métadonnées originales.",
+      "file": "./data/production/worldbank.json",
+      "sourceName": "Banque mondiale",
+      "question": "population"
     },
     {
       "id": "life-wb",
@@ -192,7 +199,10 @@
       "collection": "Compilation par la Banque mondiale de sources nationales et internationales.",
       "representativeness": "Dépend de la source nationale de chaque observation.",
       "dataType": "estimate",
-      "methodologyNote": "Compilation WDI. Le statut « estimation » est une qualification prudente du connecteur ; la méthode précise dépend de l’indicateur. Consulter les métadonnées originales."
+      "methodologyNote": "Compilation WDI. Le statut « estimation » est une qualification prudente du connecteur ; la méthode précise dépend de l’indicateur. Consulter les métadonnées originales.",
+      "file": "./data/production/worldbank.json",
+      "sourceName": "Banque mondiale",
+      "question": "vie"
     },
     {
       "id": "birth-wb",
@@ -214,7 +224,10 @@
       "collection": "Compilation par la Banque mondiale de sources nationales et internationales.",
       "representativeness": "Dépend de la source nationale de chaque observation.",
       "dataType": "estimate",
-      "methodologyNote": "Compilation WDI. Le statut « estimation » est une qualification prudente du connecteur ; la méthode précise dépend de l’indicateur. Consulter les métadonnées originales."
+      "methodologyNote": "Compilation WDI. Le statut « estimation » est une qualification prudente du connecteur ; la méthode précise dépend de l’indicateur. Consulter les métadonnées originales.",
+      "file": "./data/production/worldbank.json",
+      "sourceName": "Banque mondiale",
+      "question": "naissances"
     },
     {
       "id": "gdp-wb",
@@ -236,7 +249,10 @@
       "collection": "Compilation par la Banque mondiale de sources nationales et internationales.",
       "representativeness": "Dépend de la source nationale de chaque observation.",
       "dataType": "estimate",
-      "methodologyNote": "Compilation WDI. Le statut « estimation » est une qualification prudente du connecteur ; la méthode précise dépend de l’indicateur. Consulter les métadonnées originales."
+      "methodologyNote": "Compilation WDI. Le statut « estimation » est une qualification prudente du connecteur ; la méthode précise dépend de l’indicateur. Consulter les métadonnées originales.",
+      "file": "./data/production/worldbank.json",
+      "sourceName": "Banque mondiale",
+      "question": "economie"
     },
     {
       "id": "co2-wb",
@@ -259,7 +275,10 @@
       "representativeness": "Dépend de la source nationale de chaque observation.",
       "dataType": "estimate",
       "methodologyNote": "Compilation WDI. Le statut « estimation » est une qualification prudente du connecteur ; la méthode précise dépend de l’indicateur. Consulter les métadonnées originales.",
-      "originalPublisher": "JRC European Commission — EDGAR ; International Energy Agency (IEA)"
+      "originalPublisher": "JRC European Commission — EDGAR ; International Energy Agency (IEA)",
+      "file": "./data/production/worldbank.json",
+      "sourceName": "Banque mondiale",
+      "question": "climat"
     },
     {
       "id": "religions",
@@ -285,7 +304,74 @@
       "calculation": "Aucun calcul ou rapprochement avec l’origine migratoire.",
       "scope": "Pays uniquement dans cette V1.",
       "limits": "Aucune donnée religieuse livrée sans source vérifiée. Des enquêtes différentes ne sont pas automatiquement comparables.",
-      "methodologyNote": "Précision, collecte et incertitude à documenter lors de chaque import."
+      "methodologyNote": "Précision, collecte et incertitude à documenter lors de chaque import.",
+      "question": "religions"
+    },
+    {
+      "id": "population-insee",
+      "label": "Population municipale (recensement)",
+      "theme": "1",
+      "unit": "personnes",
+      "mode": "insee",
+      "datasetId": "DS_POPULATIONS_REFERENCE",
+      "sourceName": "INSEE",
+      "file": "./data/production/insee.json",
+      "keywords": [
+        "population",
+        "habitants",
+        "recensement"
+      ],
+      "dimensions": [],
+      "definition": "Nombre de personnes ayant leur résidence habituelle sur le territoire. La population municipale ne comprend pas la population comptée à part.",
+      "definitionURL": "https://www.insee.fr/fr/metadonnees/definition/c1287",
+      "calculation": "Valeur PMUN publiée par l’INSEE, sans estimation ou somme par Atlas.",
+      "scope": "France hors Mayotte, régions, départements et communes proposés. Millésime publié par l’INSEE, distinct de l’année de récupération.",
+      "limits": "La dernière année de recensement peut être plus ancienne que l’année courante. Ne pas confondre population municipale, population totale et estimations de population WDI. Géographie de référence publiée avec la donnée.",
+      "collection": "Recensement de la population par l’INSEE.",
+      "representativeness": "Champ du recensement ; consulter la publication pour les modalités de collecte.",
+      "revisions": "Périmètres administratifs et populations de référence susceptibles de changer.",
+      "dataType": "observation",
+      "methodologyNote": "Population municipale PMUN ; uniquement les valeurs publiées. La géographie est indiquée dans les dimensions. France hors Mayotte selon la couverture du jeu.",
+      "question": "population"
+    },
+    {
+      "id": "chomage-eurostat",
+      "label": "Taux de chômage des 15–74 ans",
+      "theme": "5",
+      "unit": "%",
+      "mode": "eurostat",
+      "datasetId": "une_rt_a",
+      "sourceName": "Eurostat",
+      "file": "./data/production/eurostat.json",
+      "eurostatGeo": {
+        "FRA": "FR",
+        "DEU": "DE",
+        "ESP": "ES",
+        "ITA": "IT"
+      },
+      "apiFilters": {
+        "freq": "A",
+        "sex": "T",
+        "age": "Y15-74",
+        "unit": "PC_ACT"
+      },
+      "keywords": [
+        "chomage",
+        "emploi",
+        "taux de chomage"
+      ],
+      "dimensions": [],
+      "definition": "Pourcentage de chômeurs au sens du BIT parmi la population active de 15 à 74 ans. Moyenne annuelle, femmes et hommes réunis.",
+      "definitionURL": "https://ec.europa.eu/eurostat/cache/metadata/en/une_esms.htm",
+      "calculation": "Nombre de chômeurs / population active × 100, selon l’enquête sur les forces de travail.",
+      "scope": "France, Allemagne, Espagne, Italie ; années publiées par Eurostat.",
+      "limits": "Rupture méthodologique de l’enquête européenne en 2021 ; autres drapeaux de qualité possibles. Ne pas assimiler aux inscrits à France Travail.",
+      "collection": "Enquête sur les forces de travail (EU-LFS).",
+      "representativeness": "Enquête nationale harmonisée ; incertitude d’échantillonnage, intervalle seulement si fourni.",
+      "revisions": "Ruptures de série, données provisoires et révisions signalées par les codes Eurostat.",
+      "dataType": "survey",
+      "methodologyNote": "EU-LFS : moyenne annuelle, 15–74 ans, sexes réunis. Codes qualité conservés dans dimensions.sourceFlag.",
+      "question": "chomage"
     }
   ]
 }

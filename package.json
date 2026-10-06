@@ -1,10 +1,10 @@
 {
   "name": "atlas-data-center",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node --test tests/core.test.mjs",
+    "test": "node --test tests/core.test.mjs tests/guided.test.mjs",
     "validate": "python3 scripts/validate.py"
   }
 }

@@ -1,19 +1,21 @@
-# ATLAS DATA CENTER — V1
+# ATLAS DATA CENTER — V2
 
 Application statique française pour explorer, comparer et exporter des statistiques avec leur source. Sans serveur, compte ni dépendance CDN obligatoire. Compatible avec une URL GitHub Pages contenant le nom du dépôt.
 
-**Important : les chiffres français locaux fournis sont des DONNÉES DE DÉMONSTRATION. Ils sont artificiels et ne proviennent pas de l’INSEE. Aucun chiffre religieux n’est fabriqué.** Les séries nationales internationales sont demandées à la Banque mondiale ; leur disponibilité dépend du réseau et du producteur.
+**Commencez par les trois menus : « Que cherchez-vous ? », « Pour quel territoire ? », « Pour quelle période ? ».** Les chiffres réels de l’INSEE, d’Eurostat et de la Banque mondiale sont connectés et des copies publiques sourcées sont livrées. Les exemples fictifs sont activés uniquement sur demande ; aucun chiffre religieux n’est fabriqué.
+
+[Guide simple de la V2](docs/V2_GUIDE.md). Les bases sont décrites dans l’écran **Bases et définitions** ; **D’où vient ce chiffre ?** ouvre la publication de chaque résultat.
 
 ## Ce qui fonctionne
 Accueil et 14 thèmes ; recherche locale avec accents, mots-clés, suggestions et choix en cas d’ambiguïté ; filtres ; graphiques SVG en courbes et barres, donut uniquement pour une composition pertinente ; comparaison de 2–5 territoires ; calculs d’écarts sur période commune ; navigation géographique selon les données ; détail cliquable ; tableaux paginés ; export CSV traçable ; impression/PDF ; favoris ; clair/sombre ; cache local ; service worker ; imports CSV et JSON sourcés ; actualisation et publication par GitHub Actions.
 
 ## Périmètre transparent de la V1
-- 4 indicateurs locaux synthétiques (population, immigrés, chômage, revenu), 6 territoires, années 2000–2024.
+- Population municipale réelle INSEE : France et les territoires français proposés ; recherche d’une autre commune par son nom. Quatre anciens indicateurs synthétiques restent dans un mode de démonstration séparé.
 - 5 indicateurs WDI pour France, Allemagne, Espagne, Italie, Japon, Inde et Chine. Ajouter d’autres codes pays au catalogue est possible.
 - Religions : écran et import validé, sans observations livrées. Aucun niveau infranational n’est autorisé par cet adaptateur V1. Les projections restent identifiées.
 - Les 14 thèmes sont disponibles dans la navigation, mais plusieurs n’ont encore aucun jeu connecté.
 - Pas de carte mondiale réelle ni de fond géographique intégré. Le classement remplace la carte ; un GeoJSON fourni et documenté active la choroplèthe.
-- Pas de connecteur INSEE universel prêt à toutes les requêtes : adaptateur avec mapping par jeu. BDM et métadonnées demandent une conversion en amont. Eurostat : adaptateur JSON-stat disponible, jeu à configurer.
+- INSEE Melodi et Eurostat sont reliés à des jeux ciblés et vérifiés, pas à toutes les séries de leurs catalogues. BDM et autres cubes restent à configurer avec un mapping explicite.
 - Pyramide des âges, histogramme et nuage de points disponibles pour des jeux importés portant les dimensions explicites nécessaires. Hiérarchie : barres comme alternative au treemap ; avant/après : barres plutôt que slope chart. Les jeux livrés utilisent principalement les courbes et barres.
 - Export PDF via l’impression native, sans téléchargement PDF automatique. Aucun serveur n’est nécessaire.
 
@@ -51,7 +53,7 @@ Les adaptateurs séparés se trouvent dans `adapters`. INSEE demande un `mapRow`
 
 ## 9. Activer les Actions
 Onglet **Actions → I understand my workflows, go ahead and enable them** si demandé. Dans **Settings → Actions → General**, autorisez les actions nécessaires et les permissions de lecture/écriture pour le workflow d’actualisation si les règles du dépôt le nécessitent.
-« Actualiser les données publiques » s’exécute le premier jour de chaque mois à 05:15 UTC, ou avec **Run workflow**. Il collecte uniquement WDI, valide les lots, et écrit un nouvel instantané seulement après succès de tous les lots. Le dernier fichier valide est conservé en cas d’erreur. Les délais de GitHub peuvent décaler les horaires.
+« Actualiser les données publiques » s’exécute le premier jour de chaque mois à 05:15 UTC, ou avec **Run workflow**. Il actualise INSEE, Eurostat et WDI séparément : chaque base remplace son instantané uniquement après validation. Une base en panne conserve ses données précédentes et n’empêche pas les autres bases de se mettre à jour. Le fichier `data/source-status.json` indique le statut réel de chaque tentative. Les délais de GitHub peuvent décaler les horaires.
 Aucun secret nécessaire pour WDI. Si un futur connecteur en exige un, utilisez **Settings → Secrets and variables → Actions → New repository secret**, et lisez-le seulement dans l’environnement du script Actions. Ne le mettez jamais dans le JS, un JSON public, les journaux ou le YAML en clair. Les secrets ne sont pas transmis au navigateur.
 
 ## 10. Résoudre CORS et les erreurs réseau
@@ -65,7 +67,7 @@ Utilisez le workflow ou remplacez un JSON validé par un fichier du même format
 
 ## Tester en local (facultatif)
 Avec Python et Node : `python3 -m http.server 8000` depuis le dossier, puis ouvrez le serveur dans votre navigateur. Ne double-cliquez pas sur `index.html` : les modules et fetch ne fonctionnent pas correctement en `file://`.
-Validation : `python3 scripts/validate.py` et `node --test tests/core.test.mjs`. Aucun `npm install` nécessaire.
+Validation : `python3 scripts/validate.py` et `node --test tests/core.test.mjs tests/guided.test.mjs`. Aucun `npm install` nécessaire.
 
 ## Architecture
 ES modules natifs ; graphiques SVG accessibles au clavier et doublés par un tableau ; adaptateurs vers un schéma commun ; cache local plafonné ; routeur par hash pour éviter les 404 de GitHub Pages. Les fichiers sont relatifs, aucune clé. Deux workflows séparent acquisition et publication. Le GeoJSON vide évite d’afficher des frontières fictives. Voir `docs/METHODOLOGY.md`, `DATA_SOURCES.md`, `PRIVACY.md` et `ADDING_A_DATASET.md`.

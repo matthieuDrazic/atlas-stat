@@ -1,0 +1,30 @@
+name: Vérifier le parcours utilisateur V2
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Installer le navigateur de test
+        run: |
+          npm install --no-save --package-lock=false playwright
+          npx playwright install --with-deps chromium
+      - name: Tester ordinateur et format iPhone 15
+        run: |
+          python3 -m http.server 8000 > /tmp/atlas-http.log 2>&1 &
+          node tests/ui-smoke.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: apercus-atlas-v2
+          path: qa-artifacts
+          if-no-files-found: ignore

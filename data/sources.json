@@ -1,0 +1,45 @@
+[
+  {
+    "id": "insee",
+    "label": "INSEE",
+    "role": "Population des communes, départements et régions françaises",
+    "status": "connected",
+    "url": "https://catalogue-donnees.insee.fr/fr/catalogue/recherche/DS_POPULATIONS_REFERENCE",
+    "file": "./data/production/insee.json",
+    "license": "Licence Ouverte 2.0"
+  },
+  {
+    "id": "eurostat",
+    "label": "Eurostat",
+    "role": "Chômage : une définition harmonisée pour comparer les pays européens",
+    "status": "connected",
+    "url": "https://ec.europa.eu/eurostat/databrowser/view/une_rt_a/default/table?lang=fr",
+    "file": "./data/production/eurostat.json",
+    "license": "Politique de réutilisation de la Commission européenne"
+  },
+  {
+    "id": "worldbank",
+    "label": "Banque mondiale",
+    "role": "Population, espérance de vie, natalité, PIB et CO₂ par pays",
+    "status": "connected",
+    "url": "https://data.worldbank.org/",
+    "file": "./data/production/worldbank.json",
+    "license": "CC BY 4.0 ; consulter les conditions du jeu"
+  },
+  {
+    "id": "datagouv",
+    "label": "data.gouv.fr",
+    "role": "Trouver des jeux français publiés par leur producteur",
+    "status": "catalog",
+    "url": "https://www.data.gouv.fr/",
+    "license": "Varie selon le jeu"
+  },
+  {
+    "id": "pew",
+    "label": "Pew Research Center",
+    "role": "Consulter les études sur les affiliations religieuses",
+    "status": "external",
+    "url": "https://www.pewresearch.org/religion/",
+    "license": "Vérifier les droits de chaque étude"
+  }
+]

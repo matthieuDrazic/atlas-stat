@@ -19,7 +19,7 @@
   },
   {
     "code": "FR",
-    "label": "France (démo locale)",
+    "label": "France — exemple fictif",
     "aliases": [
       "France"
     ],
@@ -30,37 +30,43 @@
     "code": "FR-53",
     "label": "Bretagne",
     "level": "region",
-    "parent": "FR"
+    "parent": "FR",
+    "inseeGeo": "REG-53"
   },
   {
     "code": "FR-28",
     "label": "Normandie",
     "level": "region",
-    "parent": "FR"
+    "parent": "FR",
+    "inseeGeo": "REG-28"
   },
   {
     "code": "FR-35",
     "label": "Ille-et-Vilaine",
     "level": "department",
-    "parent": "FR-53"
+    "parent": "FR-53",
+    "inseeGeo": "DEP-35"
   },
   {
     "code": "FR-22",
     "label": "Côtes-d’Armor",
     "level": "department",
-    "parent": "FR-53"
+    "parent": "FR-53",
+    "inseeGeo": "DEP-22"
   },
   {
     "code": "FR-35238",
     "label": "Rennes",
     "level": "commune",
-    "parent": "FR-35"
+    "parent": "FR-35",
+    "inseeGeo": "COM-35238"
   },
   {
     "code": "FRA",
     "label": "France",
     "level": "country",
-    "parent": "EUROPE"
+    "parent": "EUROPE",
+    "inseeGeo": "FRANCE-F"
   },
   {
     "code": "DEU",
@@ -97,5 +103,53 @@
     "label": "Chine",
     "level": "country",
     "parent": "ASIA"
+  },
+  {
+    "code": "FR-75056",
+    "label": "Paris",
+    "level": "commune",
+    "parent": null,
+    "inseeGeo": "COM-75056",
+    "departmentCode": "75"
+  },
+  {
+    "code": "FR-44109",
+    "label": "Nantes",
+    "level": "commune",
+    "parent": null,
+    "inseeGeo": "COM-44109",
+    "departmentCode": "44"
+  },
+  {
+    "code": "FR-69123",
+    "label": "Lyon",
+    "level": "commune",
+    "parent": null,
+    "inseeGeo": "COM-69123",
+    "departmentCode": "69"
+  },
+  {
+    "code": "FR-29232",
+    "label": "Quimper",
+    "level": "commune",
+    "parent": null,
+    "inseeGeo": "COM-29232",
+    "departmentCode": "29"
+  },
+  {
+    "code": "FR-80021",
+    "label": "Amiens",
+    "level": "commune",
+    "parent": null,
+    "inseeGeo": "COM-80021",
+    "departmentCode": "80"
+  },
+  {
+    "code": "FR-67482",
+    "label": "Strasbourg",
+    "level": "commune",
+    "parent": null,
+    "inseeGeo": "COM-67482",
+    "departmentCode": "67"
   }
 ]
