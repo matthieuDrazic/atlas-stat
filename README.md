@@ -9,10 +9,10 @@ Application statique française pour explorer, comparer et exporter des statisti
 ## Ce qui fonctionne
 Accueil et 14 thèmes ; recherche locale avec accents, mots-clés, suggestions et choix en cas d’ambiguïté ; filtres ; graphiques SVG en courbes et barres, donut uniquement pour une composition pertinente ; comparaison de 2–5 territoires ; calculs d’écarts sur période commune ; navigation géographique selon les données ; détail cliquable ; tableaux paginés ; export CSV traçable ; impression/PDF ; favoris ; clair/sombre ; cache local ; service worker ; imports CSV et JSON sourcés ; actualisation et publication par GitHub Actions.
 
-## Périmètre transparent de la V1
+## Périmètre de la V2
 - Population municipale réelle INSEE : France et les territoires français proposés ; recherche d’une autre commune par son nom. Quatre anciens indicateurs synthétiques restent dans un mode de démonstration séparé.
 - 5 indicateurs WDI pour France, Allemagne, Espagne, Italie, Japon, Inde et Chine. Ajouter d’autres codes pays au catalogue est possible.
-- Religions : écran et import validé, sans observations livrées. Aucun niveau infranational n’est autorisé par cet adaptateur V1. Les projections restent identifiées.
+- Religions : écran et import validé, sans observations livrées. Aucun niveau infranational n’est autorisé par cet adaptateur. Les projections restent identifiées.
 - Les 14 thèmes sont disponibles dans la navigation, mais plusieurs n’ont encore aucun jeu connecté.
 - Pas de carte mondiale réelle ni de fond géographique intégré. Le classement remplace la carte ; un GeoJSON fourni et documenté active la choroplèthe.
 - INSEE Melodi et Eurostat sont reliés à des jeux ciblés et vérifiés, pas à toutes les séries de leurs catalogues. BDM et autres cubes restent à configurer avec un mapping explicite.
@@ -28,7 +28,7 @@ Décompressez le ZIP. Ajoutez **le contenu du dossier atlas-data-center à la ra
 ## 3. Importer depuis ordinateur ou mobile
 Sur le site GitHub du dépôt : **Add file → Upload files**, glissez les fichiers et dossiers puis **Commit changes**. Sur mobile/iPhone, l’application GitHub ne fournit pas une importation complète de dossiers ZIP : utilisez Safari, éventuellement « Version pour ordinateur », ou un ordinateur pour conserver tous les sous-dossiers et fichiers cachés. Pour un gros téléversement, GitHub Desktop ou Git est plus fiable.
 
-Avec Git : créez un clone du dépôt, copiez les fichiers, puis `git add .`, `git commit -m "Add Atlas V1"`, `git push`. Vérifiez la présence de `.github/workflows`.
+Avec Git : créez un clone du dépôt, copiez les fichiers, puis `git add .`, `git commit -m "Add Atlas"`, `git push`. Vérifiez la présence de `.github/workflows`.
 
 ## 4. Activer GitHub Pages
 Deux méthodes, choisissez-en une :
@@ -38,7 +38,7 @@ Deux méthodes, choisissez-en une :
 La méthode Actions est recommandée si vous activez l’actualisation automatique des données. Une actualisation réussie déclenche la publication via `workflow_run` ; un push créé par le jeton Actions ne déclenche pas à lui seul un autre workflow push.
 
 ## 5. Vérifier le site
-Ouvrez l’URL affichée dans Settings → Pages (après la fin du déploiement). Essayez `population Rennes`, vérifiez le bandeau **DONNÉES DE DÉMONSTRATION**, cliquez sur un point puis sa source. Comparez Bretagne et Normandie. Exportez CSV. Ouvrez Religions : sans import, une vue vide est attendue. Sur iPhone : les menus se trouvent en bas ; le tableau défile horizontalement.
+Ouvrez l’URL affichée dans Settings → Pages (après la fin du déploiement). Choisissez la question population, Rennes et la dernière année disponible. Vérifiez la source **INSEE** et l’année du chiffre. Comparez Bretagne et Normandie. Les exemples fictifs ne sont accessibles que via le bouton de démonstration. Exportez CSV. Ouvrez Religions : sans import, une vue vide est attendue. Sur iPhone : les menus se trouvent en bas ; le tableau défile horizontalement.
 Le bouton **Imprimer / enregistrer en PDF** ouvre l’impression du navigateur. Sur iOS, utilisez l’aperçu d’impression puis les options de partage/enregistrement du système.
 
 ## 6. Modifier le catalogue

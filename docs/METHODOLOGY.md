@@ -7,6 +7,8 @@
 - Courbe : trou lorsque l’observation est absente ou nulle ; aucune interpolation à travers le manque.
 - Barres : maximum 40 observations affichées, tableau et export complets.
 - Donut proposé uniquement pour une période, un territoire, 2–7 catégories non manquantes, non négatives en pourcentage et somme à 0,2 point de 100. Les arrondis peuvent expliquer cet écart.
+- V2 : parcours par question, territoire et période ; priorité aux chiffres réels. La dernière année disponible exclut les années sans valeur, sans imputation. Pour comparer, la dernière année commune avec une valeur pour tous est privilégiée ; une absence de période commune reste signalée.
+- INSEE : population municipale PMUN au millésime du producteur ; la date de récupération ne remplace jamais cette année. Eurostat : moyenne annuelle EU-LFS, 15–74 ans, sexes réunis.
 - Cartes : aucun fond réel livré. Classement de remplacement ; un GeoJSON correctement codé active une choroplèthe plane. Aucune carte mondiale complète livrée.
 - La fonction de drill-down exige une observation disponible à la même période et des enfants géographiques explicitement présents. Une dimension déclarée n’est proposée que si une valeur est publiée.
 - Religions : pas de démonstration chiffrée ; la nationalité, le pays de naissance et l’immigration ne renseignent pas l’affiliation. Les enquêtes, estimations et projections sont distinctes. Les intervalles, s’ils existent, sont affichés dans le détail. La précision des valeurs importées doit respecter celle du producteur.

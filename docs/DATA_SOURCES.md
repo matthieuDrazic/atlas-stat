@@ -1,21 +1,25 @@
-# Sources et connexions
+# Sources et connexions — V2
 
-V1 : les séries françaises locales livrées sont **DONNÉES DE DÉMONSTRATION**. Aucun chiffre réel INSEE ou Pew n’est intégré. Le module religieux contient un tableau vide.
+Trois bases sont réellement utilisées :
+- **INSEE Melodi** : population municipale, jeu `DS_POPULATIONS_REFERENCE`, mesure PMUN. National France hors Mayotte, régions, départements et communes proposés. Une commune supplémentaire peut être cherchée dans le référentiel administratif officiel puis interrogée dans Melodi.
+- **Eurostat** : taux de chômage annuel des 15–74 ans, `une_rt_a`, filtres A / T / Y15-74 / PC_ACT, quatre pays. Les codes de qualité sont conservés, notamment les ruptures de séries.
+- **Banque mondiale WDI** : cinq indicateurs, sept pays, périodes publiées. Les définitions INSEE et WDI restent distinctes.
 
-## Connexion activée
-Banque mondiale WDI : API v2 sans clé, cinq indicateurs, sept pays ; requêtes limitées aux pays et années sélectionnés. Cache de 24 h ; à défaut de réseau, dernier cache ou instantané GitHub Actions. Un échec sans instantané propose explicitement une démonstration, jamais un remplacement silencieux.
-Documentation : https://datahelpdesk.worldbank.org/knowledgebase/articles/889392-about-the-indicators-api
-Licence : https://www.worldbank.org/en/about/legal/terms-of-use-for-datasets
-La qualification prudente `estimate` du connecteur n’est pas une classification détaillée de chaque observation WDI. Pour une analyse publiée, compléter cette classification à partir des métadonnées de l’indicateur.
+Les extractions réelles livrées ont été récupérées le 6 octobre 2026 et validées. `data/source-status.json` donne la couverture et la date exacte de chaque copie. Le connecteur lit prioritairement une copie sourcée couvrant la recherche, puis la base si nécessaire ; le bouton de mise à jour demande une lecture en direct. Le cache et la dernière copie utilisable servent de secours.
 
-## Adaptateurs nécessitant un jeu et un mapping
-- INSEE : `inseeAdapter(rows, indicator, {source, mapRow})`. Chaque cube nécessite de lire son schéma ; ne pas deviner les dimensions. Catalogue officiel : https://www.insee.fr/fr/information/8184146 ; documentation Melodi : https://www.insee.fr/fr/information/1302169?question=comment-utiliser-l-api-melodi
-- BDM, Données locales et Métadonnées : pas de connecteur universel activé ; extraire/normaliser les fichiers en amont. Vérifier leurs modalités d’accès et leur migration vers Melodi dans le catalogue INSEE.
-- Eurostat : `eurostatAdapter(jsonStat, indicator, {source, dimensionMap})` ; `dimensionMap` retourne l’observation brute ou `null` pour une combinaison exclue. API : https://ec.europa.eu/eurostat/web/user-guides/data-browser/api-data-access/api-introduction
-- CSV : `csvAdapter(text, indicator, source)` ; champs documentés dans le README.
-- Religions : `religionAdapter(rows, indicator, source)` ; pays/continent/monde seulement. Aucune génération, inférence à partir de l’origine ou de la nationalité.
-- data.gouv.fr, OCDE, ONU, OWID, Pew : imports documentés possibles, pas de collecte automatisée livrée pour ces sources.
+La collecte GitHub Actions utilise `scripts/refresh_public_data.py` : une base défaillante conserve son dernier fichier valide et n’empêche pas les autres bases de se mettre à jour. Les valeurs absentes restent nulles. Aucun jeton n’est nécessaire pour ces requêtes publiques.
 
-Les licences varient selon les jeux et leurs sources initiales. Conserver les conditions exactes dans `source.license`, la publication originale dans `source.url`, et toute attribution requise. Un lien vers un organisme ne constitue pas une licence de réutilisation.
+## Autres sources
+`data.gouv.fr` est un catalogue : les liens donnent accès aux jeux et à leurs producteurs, pas à une statistique inventée. Pew est un lien vers des études, pas un module religieux déjà alimenté. Immigration, niveau de vie et religions sont explicitement signalés lorsqu’aucun jeu n’est encore connecté dans Atlas. Les adaptateurs génériques restent disponibles pour de futurs imports vérifiés.
 
-CO₂ : indicateur actuel `EN.GHG.CO2.PC.CE.AR5`, hors UTCATF, t CO₂e/personne. Producteurs initiaux explicitement indiqués : JRC/EDGAR et IEA. Métadonnées originales : https://data.worldbank.org/indicator/EN.GHG.CO2.PC.CE.AR5
+## Documentation officielle
+- INSEE : https://catalogue-donnees.insee.fr/fr/catalogue/recherche/DS_POPULATIONS_REFERENCE
+- API INSEE : https://www.insee.fr/fr/information/8184146
+- Eurostat : https://ec.europa.eu/eurostat/web/user-guides/data-browser/api-data-access/api-detailed-guidelines/api-statistics
+- WDI : https://datahelpdesk.worldbank.org/knowledgebase/articles/889392-about-the-indicators-api
+- Communes : https://geo.api.gouv.fr/decoupage-administratif/communes
+
+## Licences et attribution
+La population INSEE est sous Licence Ouverte 2.0. Eurostat requiert l’attribution et le respect de la politique de réutilisation de la Commission. WDI conserve ses conditions propres, généralement CC BY 4.0 avec les réserves du jeu et de ses producteurs initiaux. Les URL, licences, dates et organismes figurent sur chaque observation.
+
+CO₂ : `EN.GHG.CO2.PC.CE.AR5`, hors UTCATF, t CO₂e/personne. Producteurs initiaux : JRC/EDGAR et IEA. Source : https://data.worldbank.org/indicator/EN.GHG.CO2.PC.CE.AR5

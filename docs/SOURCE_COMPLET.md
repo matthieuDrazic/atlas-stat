@@ -1,3 +1,5 @@
+> Archive du code V1. Pour le code V2 actuel, consulter les fichiers du dépôt GitHub : https://github.com/matthieuDrazic/atlas-stat. Les changements V2 sont décrits dans V2_GUIDE.md.
+
 # ATLAS DATA CENTER — Architecture, arborescence et code intégral
 
 ÉTAPE 1 — Architecture retenue
