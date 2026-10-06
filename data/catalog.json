@@ -1,0 +1,291 @@
+{
+  "version": 1,
+  "themes": [
+    {
+      "id": "1",
+      "label": "Population"
+    },
+    {
+      "id": "2",
+      "label": "Immigration et mobilité"
+    },
+    {
+      "id": "3",
+      "label": "Naissances et fécondité"
+    },
+    {
+      "id": "4",
+      "label": "Décès et espérance de vie"
+    },
+    {
+      "id": "5",
+      "label": "Emploi et chômage"
+    },
+    {
+      "id": "6",
+      "label": "Revenus et pauvreté"
+    },
+    {
+      "id": "7",
+      "label": "Logement et immobilier"
+    },
+    {
+      "id": "8",
+      "label": "Éducation"
+    },
+    {
+      "id": "9",
+      "label": "Santé"
+    },
+    {
+      "id": "10",
+      "label": "Entreprises et activité économique"
+    },
+    {
+      "id": "11",
+      "label": "Environnement et climat"
+    },
+    {
+      "id": "12",
+      "label": "Sécurité"
+    },
+    {
+      "id": "13",
+      "label": "Religions du monde"
+    },
+    {
+      "id": "14",
+      "label": "Comparaisons internationales"
+    }
+  ],
+  "indicators": [
+    {
+      "id": "population-demo",
+      "label": "Population — démonstration",
+      "theme": "1",
+      "unit": "personnes",
+      "mode": "demo",
+      "file": "./data/demo/demo-france.json",
+      "keywords": [
+        "population",
+        "demographie"
+      ],
+      "dimensions": [],
+      "definition": "Nombre d’habitants. Cette démonstration n’est pas une mesure de population réelle.",
+      "definitionURL": "https://www.insee.fr/fr/metadonnees/definitions",
+      "calculation": "Valeurs synthétiques de test ; aucun calcul statistique réel.",
+      "scope": "Territoires fictivement renseignés pour tester les filtres.",
+      "limits": "Ces valeurs synthétiques ne permettent aucune conclusion sur les territoires réels. Ne pas les citer comme des statistiques.",
+      "collection": "Génération informatique, sans enquête ni recensement.",
+      "representativeness": "Aucune : démonstration uniquement.",
+      "revisions": "Aucune série officielle.",
+      "methodologyNote": "DONNÉES DE DÉMONSTRATION : chiffres artificiels sans valeur statistique.",
+      "dataType": "observation"
+    },
+    {
+      "id": "immigres-demo",
+      "label": "Population immigrée — démonstration",
+      "theme": "2",
+      "unit": "personnes",
+      "mode": "demo",
+      "file": "./data/demo/demo-france.json",
+      "keywords": [
+        "immigration",
+        "immigre",
+        "immigres"
+      ],
+      "dimensions": [],
+      "definition": "Selon la définition INSEE, un immigré est une personne née étrangère à l’étranger et résidant en France. La qualité d’immigré demeure après une acquisition de la nationalité française.",
+      "definitionURL": "https://www.insee.fr/fr/metadonnees/definitions",
+      "calculation": "Valeurs synthétiques de test ; aucun calcul statistique réel.",
+      "scope": "Territoires fictivement renseignés pour tester les filtres.",
+      "limits": "Ces valeurs synthétiques ne permettent aucune conclusion sur les territoires réels. Ne pas les citer comme des statistiques.",
+      "collection": "Génération informatique, sans enquête ni recensement.",
+      "representativeness": "Aucune : démonstration uniquement.",
+      "revisions": "Aucune série officielle.",
+      "methodologyNote": "DONNÉES DE DÉMONSTRATION : chiffres artificiels sans valeur statistique.",
+      "dataType": "observation"
+    },
+    {
+      "id": "chomage-demo",
+      "label": "Taux de chômage — démonstration",
+      "theme": "5",
+      "unit": "%",
+      "mode": "demo",
+      "file": "./data/demo/demo-france.json",
+      "keywords": [
+        "chomage"
+      ],
+      "dimensions": [],
+      "definition": "Rapport du nombre de chômeurs à la population active, selon la définition retenue. Le jeu synthétique ne mesure pas le chômage au sens du BIT.",
+      "definitionURL": "https://www.insee.fr/fr/metadonnees/definitions",
+      "calculation": "Valeurs synthétiques de test ; aucun calcul statistique réel.",
+      "scope": "Territoires fictivement renseignés pour tester les filtres.",
+      "limits": "Ces valeurs synthétiques ne permettent aucune conclusion sur les territoires réels. Ne pas les citer comme des statistiques.",
+      "collection": "Génération informatique, sans enquête ni recensement.",
+      "representativeness": "Aucune : démonstration uniquement.",
+      "revisions": "Aucune série officielle.",
+      "methodologyNote": "DONNÉES DE DÉMONSTRATION : chiffres artificiels sans valeur statistique.",
+      "dataType": "observation"
+    },
+    {
+      "id": "revenu-demo",
+      "label": "Revenu médian — démonstration",
+      "theme": "6",
+      "unit": "EUR",
+      "mode": "demo",
+      "file": "./data/demo/demo-france.json",
+      "keywords": [
+        "revenu",
+        "revenu median"
+      ],
+      "dimensions": [],
+      "definition": "Valeur qui partage une distribution en deux groupes de même effectif. Revenu et niveau de vie sont des concepts distincts ; le jeu synthétique ne mesure ni l’un ni l’autre.",
+      "definitionURL": "https://www.insee.fr/fr/metadonnees/definitions",
+      "calculation": "Valeurs synthétiques de test ; aucun calcul statistique réel.",
+      "scope": "Territoires fictivement renseignés pour tester les filtres.",
+      "limits": "Ces valeurs synthétiques ne permettent aucune conclusion sur les territoires réels. Ne pas les citer comme des statistiques.",
+      "collection": "Génération informatique, sans enquête ni recensement.",
+      "representativeness": "Aucune : démonstration uniquement.",
+      "revisions": "Aucune série officielle.",
+      "methodologyNote": "DONNÉES DE DÉMONSTRATION : chiffres artificiels sans valeur statistique.",
+      "dataType": "observation"
+    },
+    {
+      "id": "population-wb",
+      "label": "Population totale",
+      "theme": "14",
+      "unit": "personnes",
+      "mode": "worldbank",
+      "apiIndicator": "SP.POP.TOTL",
+      "keywords": [
+        "population mondiale",
+        "population pays"
+      ],
+      "dimensions": [],
+      "definition": "Consulter la définition et la méthode propres à cet indicateur dans les métadonnées World Development Indicators.",
+      "definitionURL": "https://data.worldbank.org/indicator/SP.POP.TOTL",
+      "calculation": "Méthode du producteur ; aucun recalcul par Atlas.",
+      "scope": "Pays disponibles ; pas de granularité infranationale.",
+      "limits": "Couverture variable selon le pays et l’année. Les valeurs manquantes restent nulles. Les définitions, estimations et révisions doivent être vérifiées dans les métadonnées du producteur.",
+      "collection": "Compilation par la Banque mondiale de sources nationales et internationales.",
+      "representativeness": "Dépend de la source nationale de chaque observation.",
+      "dataType": "estimate",
+      "methodologyNote": "Compilation WDI. Le statut « estimation » est une qualification prudente du connecteur ; la méthode précise dépend de l’indicateur. Consulter les métadonnées originales."
+    },
+    {
+      "id": "life-wb",
+      "label": "Espérance de vie à la naissance",
+      "theme": "4",
+      "unit": "années",
+      "mode": "worldbank",
+      "apiIndicator": "SP.DYN.LE00.IN",
+      "keywords": [
+        "esperance de vie"
+      ],
+      "dimensions": [],
+      "definition": "Consulter la définition et la méthode propres à cet indicateur dans les métadonnées World Development Indicators.",
+      "definitionURL": "https://data.worldbank.org/indicator/SP.DYN.LE00.IN",
+      "calculation": "Méthode du producteur ; aucun recalcul par Atlas.",
+      "scope": "Pays disponibles ; pas de granularité infranationale.",
+      "limits": "Couverture variable selon le pays et l’année. Les valeurs manquantes restent nulles. Les définitions, estimations et révisions doivent être vérifiées dans les métadonnées du producteur.",
+      "collection": "Compilation par la Banque mondiale de sources nationales et internationales.",
+      "representativeness": "Dépend de la source nationale de chaque observation.",
+      "dataType": "estimate",
+      "methodologyNote": "Compilation WDI. Le statut « estimation » est une qualification prudente du connecteur ; la méthode précise dépend de l’indicateur. Consulter les métadonnées originales."
+    },
+    {
+      "id": "birth-wb",
+      "label": "Taux de natalité",
+      "theme": "3",
+      "unit": "pour 1 000 personnes",
+      "mode": "worldbank",
+      "apiIndicator": "SP.DYN.CBRT.IN",
+      "keywords": [
+        "natalite",
+        "naissances"
+      ],
+      "dimensions": [],
+      "definition": "Consulter la définition et la méthode propres à cet indicateur dans les métadonnées World Development Indicators.",
+      "definitionURL": "https://data.worldbank.org/indicator/SP.DYN.CBRT.IN",
+      "calculation": "Méthode du producteur ; aucun recalcul par Atlas.",
+      "scope": "Pays disponibles ; pas de granularité infranationale.",
+      "limits": "Couverture variable selon le pays et l’année. Les valeurs manquantes restent nulles. Les définitions, estimations et révisions doivent être vérifiées dans les métadonnées du producteur.",
+      "collection": "Compilation par la Banque mondiale de sources nationales et internationales.",
+      "representativeness": "Dépend de la source nationale de chaque observation.",
+      "dataType": "estimate",
+      "methodologyNote": "Compilation WDI. Le statut « estimation » est une qualification prudente du connecteur ; la méthode précise dépend de l’indicateur. Consulter les métadonnées originales."
+    },
+    {
+      "id": "gdp-wb",
+      "label": "PIB par habitant",
+      "theme": "10",
+      "unit": "USD courants",
+      "mode": "worldbank",
+      "apiIndicator": "NY.GDP.PCAP.CD",
+      "keywords": [
+        "pib",
+        "economie"
+      ],
+      "dimensions": [],
+      "definition": "Consulter la définition et la méthode propres à cet indicateur dans les métadonnées World Development Indicators.",
+      "definitionURL": "https://data.worldbank.org/indicator/NY.GDP.PCAP.CD",
+      "calculation": "Méthode du producteur ; aucun recalcul par Atlas.",
+      "scope": "Pays disponibles ; pas de granularité infranationale.",
+      "limits": "Couverture variable selon le pays et l’année. Les valeurs manquantes restent nulles. Les définitions, estimations et révisions doivent être vérifiées dans les métadonnées du producteur.",
+      "collection": "Compilation par la Banque mondiale de sources nationales et internationales.",
+      "representativeness": "Dépend de la source nationale de chaque observation.",
+      "dataType": "estimate",
+      "methodologyNote": "Compilation WDI. Le statut « estimation » est une qualification prudente du connecteur ; la méthode précise dépend de l’indicateur. Consulter les métadonnées originales."
+    },
+    {
+      "id": "co2-wb",
+      "label": "Émissions de CO₂ par habitant, hors UTCATF",
+      "theme": "11",
+      "unit": "t CO₂e / personne",
+      "mode": "worldbank",
+      "apiIndicator": "EN.GHG.CO2.PC.CE.AR5",
+      "keywords": [
+        "co2",
+        "emissions"
+      ],
+      "dimensions": [],
+      "definition": "Émissions annuelles de CO₂ de l’agriculture, de l’énergie, des déchets et de l’industrie, hors utilisation des terres, changement d’affectation des terres et foresterie (UTCATF), divisées par la population.",
+      "definitionURL": "https://data.worldbank.org/indicator/EN.GHG.CO2.PC.CE.AR5",
+      "calculation": "Méthode du producteur ; aucun recalcul par Atlas.",
+      "scope": "Pays disponibles ; pas de granularité infranationale.",
+      "limits": "Couverture variable selon le pays et l’année. Les valeurs manquantes restent nulles. Les définitions, estimations et révisions doivent être vérifiées dans les métadonnées du producteur.",
+      "collection": "Compilation par la Banque mondiale de sources nationales et internationales.",
+      "representativeness": "Dépend de la source nationale de chaque observation.",
+      "dataType": "estimate",
+      "methodologyNote": "Compilation WDI. Le statut « estimation » est une qualification prudente du connecteur ; la méthode précise dépend de l’indicateur. Consulter les métadonnées originales.",
+      "originalPublisher": "JRC European Commission — EDGAR ; International Energy Agency (IEA)"
+    },
+    {
+      "id": "religions",
+      "label": "Affiliation religieuse déclarée",
+      "theme": "13",
+      "unit": "%",
+      "mode": "static",
+      "file": "./data/production/religions.json",
+      "keywords": [
+        "religion",
+        "religions",
+        "musulman",
+        "islam",
+        "christianisme",
+        "bouddhisme"
+      ],
+      "dimensions": [
+        "religion"
+      ],
+      "dataType": "estimate",
+      "definition": "Affiliation telle que publiée par une source identifiée. Elle ne correspond pas nécessairement à la pratique ou aux croyances.",
+      "definitionURL": "https://www.pewresearch.org/religion/",
+      "calculation": "Aucun calcul ou rapprochement avec l’origine migratoire.",
+      "scope": "Pays uniquement dans cette V1.",
+      "limits": "Aucune donnée religieuse livrée sans source vérifiée. Des enquêtes différentes ne sont pas automatiquement comparables.",
+      "methodologyNote": "Précision, collecte et incertitude à documenter lors de chaque import."
+    }
+  ]
+}

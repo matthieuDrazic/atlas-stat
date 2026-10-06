@@ -1,0 +1,20 @@
+{
+  "immigres-demo": [
+    "immigration",
+    "population immigree"
+  ],
+  "chomage-demo": [
+    "emploi sans travail",
+    "chomage"
+  ],
+  "revenu-demo": [
+    "revenus",
+    "niveau revenu"
+  ],
+  "religions": [
+    "affiliation",
+    "sans affiliation",
+    "judaïsme",
+    "hindouisme"
+  ]
+}

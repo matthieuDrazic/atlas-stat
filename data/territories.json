@@ -1,0 +1,101 @@
+[
+  {
+    "code": "WORLD",
+    "label": "Monde",
+    "level": "world",
+    "parent": null
+  },
+  {
+    "code": "EUROPE",
+    "label": "Europe",
+    "level": "continent",
+    "parent": "WORLD"
+  },
+  {
+    "code": "ASIA",
+    "label": "Asie",
+    "level": "continent",
+    "parent": "WORLD"
+  },
+  {
+    "code": "FR",
+    "label": "France (démo locale)",
+    "aliases": [
+      "France"
+    ],
+    "level": "country",
+    "parent": "EUROPE"
+  },
+  {
+    "code": "FR-53",
+    "label": "Bretagne",
+    "level": "region",
+    "parent": "FR"
+  },
+  {
+    "code": "FR-28",
+    "label": "Normandie",
+    "level": "region",
+    "parent": "FR"
+  },
+  {
+    "code": "FR-35",
+    "label": "Ille-et-Vilaine",
+    "level": "department",
+    "parent": "FR-53"
+  },
+  {
+    "code": "FR-22",
+    "label": "Côtes-d’Armor",
+    "level": "department",
+    "parent": "FR-53"
+  },
+  {
+    "code": "FR-35238",
+    "label": "Rennes",
+    "level": "commune",
+    "parent": "FR-35"
+  },
+  {
+    "code": "FRA",
+    "label": "France",
+    "level": "country",
+    "parent": "EUROPE"
+  },
+  {
+    "code": "DEU",
+    "label": "Allemagne",
+    "level": "country",
+    "parent": "EUROPE"
+  },
+  {
+    "code": "ESP",
+    "label": "Espagne",
+    "level": "country",
+    "parent": "EUROPE"
+  },
+  {
+    "code": "ITA",
+    "label": "Italie",
+    "level": "country",
+    "parent": "EUROPE"
+  },
+  {
+    "code": "JPN",
+    "label": "Japon",
+    "level": "country",
+    "parent": "ASIA"
+  },
+  {
+    "code": "IND",
+    "label": "Inde",
+    "level": "country",
+    "parent": "ASIA"
+  },
+  {
+    "code": "CHN",
+    "label": "Chine",
+    "level": "country",
+    "parent": "ASIA"
+  }
+]

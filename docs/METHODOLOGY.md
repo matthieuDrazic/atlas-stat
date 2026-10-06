@@ -1,0 +1,15 @@
+# Méthodologie et limites
+- Aucun agrégat arbitraire entre unités, catégories ou sources.
+- `null` = manque ; `0` = valeur disponible nulle ; `status: suppressed` = non diffusable, valeur impérativement nulle.
+- Toutes les observations portent une source, une référence, une unité, un niveau et une note.
+- Variation : dernière moins première observation de la série sélectionnée, sans imputation. Pour un taux, écart absolu en points de pourcentage.
+- Comparateur : dernière période ayant une valeur disponible pour chacun des 2–5 territoires, par catégorie. Écart relatif = (valeur − référence) / abs(référence) × 100 ; référence nulle : non calculable.
+- Courbe : trou lorsque l’observation est absente ou nulle ; aucune interpolation à travers le manque.
+- Barres : maximum 40 observations affichées, tableau et export complets.
+- Donut proposé uniquement pour une période, un territoire, 2–7 catégories non manquantes, non négatives en pourcentage et somme à 0,2 point de 100. Les arrondis peuvent expliquer cet écart.
+- Cartes : aucun fond réel livré. Classement de remplacement ; un GeoJSON correctement codé active une choroplèthe plane. Aucune carte mondiale complète livrée.
+- La fonction de drill-down exige une observation disponible à la même période et des enfants géographiques explicitement présents. Une dimension déclarée n’est proposée que si une valeur est publiée.
+- Religions : pas de démonstration chiffrée ; la nationalité, le pays de naissance et l’immigration ne renseignent pas l’affiliation. Les enquêtes, estimations et projections sont distinctes. Les intervalles, s’ils existent, sont affichés dans le détail. La précision des valeurs importées doit respecter celle du producteur.
+- Sécurité : aucun chiffre criminologique non officiel. Thème vide dans cette V1.
+- Les 14 thèmes sont des emplacements de catalogue : ils ne contiennent pas tous des jeux. Les graphiques spécialisés exigent des dimensions publiées : `age` et `sex` (deux catégories, un territoire et une période), `x` numérique avec `xLabel`/`xUnit` pour un nuage, `binStart`/`binEnd` pour une distribution. Pour des classes d’histogramme de largeurs inégales, la hauteur représente une densité : l’aire reste proportionnelle à la valeur. Les hiérarchies utilisent des barres, comme alternative au treemap. Aucun échantillon fictif n’est interprété comme une donnée réelle.
+- L’application n’effectue aucune déduction individuelle ni inférence causale.
